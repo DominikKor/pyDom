@@ -1,12 +1,17 @@
 from flask import Flask, redirect, url_for, render_template, request
-
+import time
 
 app = Flask(__name__)
 
+year = int(time.strftime("%Y"))
+month = int(time.strftime("%m"))
+day = int(time.strftime("%d"))
+
+maxdate = f"{year}-{month}-{day}"
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", maxdate=maxdate)
 
 
 @app.route("/name/", methods=["POST", "GET"])
@@ -33,3 +38,4 @@ def user(usr):
 
 if __name__ == "__main__":
     app.run()
+

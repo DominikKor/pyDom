@@ -1,0 +1,50 @@
+from flask import *
+import time
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return flask.render_template("index.html")
+
+
+@app.route("/age/", methods=["POST", "GET"])
+def age():
+    if flask.request.method == "POST":
+        user = flask.request.form["nm"]
+        return flask.redirect(flask.url_for("user", usr=user))
+    else:
+        return flask.render_template("age.html")
+
+
+@app.route("/ageerror/")
+def ageerror():
+    return "<h1>Fehler bei der Eingabe: <a href=\"/age/\">Versuche es erneut!</a></h1>"
+
+
+@app.route("/age/<usr>/")
+def ageprogramm(usr):
+    """try:
+        usr = int(usr)
+    except Exception:
+        namelenght = len(usr)
+        capusr = usr.title()
+        return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Dein Name hat {namelenght} Buchstaben!"
+    else:
+        alter = 2020 - usr
+        return f"Du wirst/wurdest dieses Jahr {alter} Jahre alt!"""
+    datesplit = usr.split("-")
+    InputTag = datesplit[2]
+    InputMonat = datesplit[1]
+    InputJahr = datesplit[0]
+    Jahr = int(time.strftime("%Y"))
+    Monat = int(time.strftime("%m"))
+    Tag = int(time.strftime("%d"))
+
+    if (int(InputJahr)) == Jahr and (int(InputMonat)) == Monat and (int(InputTag) > Tag):
+        flask.redirect(flask.url_for("ageerror", usr=user))
+
+
+if __name__ == "__main__":
+    app.run()

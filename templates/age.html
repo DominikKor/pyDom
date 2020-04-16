@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <title>Age</title>
 </head>
 <body>
@@ -43,7 +43,8 @@
 <h1>Name und Alter</h1><hr>
 <form action="#" method="post">
     <p>Gebe deinen Namen oder dein Geburtsjahr ein.</p>
-    <p><input id="date" type="date" name="nm"></p>
+    <p><input id="date" type="date" name="nm" value="2000-1-1"
+       min="1900-1-1" max="1900-1-2" required></p>
     <p><input type="submit" value="Weiter" /></p>
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -15,7 +15,7 @@ def welcome(name):
     return f"Hello {name}!"
 
 
-@app.route("/name", methods=["POST", "GET"])
+@app.route("/name/", methods=["POST", "GET"])
 def age():
     if request.method == "POST":
         user = request.form["nm"]
@@ -27,8 +27,7 @@ def age():
 def user(usr):
     namelenght = len(usr)
     capusr = usr.title()
-    return f"<h1>Hello {capusr}!</h1>"
-    print(f"Fun Fact: Your name has {namelenght} letters!")
+    return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Your name has {namelenght} letters!"
 
 if __name__ == "__main__":
     app.run()

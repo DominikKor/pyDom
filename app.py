@@ -25,9 +25,15 @@ def age():
 
 @app.route("/name/<usr>")
 def user(usr):
-    namelenght = len(usr)
-    capusr = usr.title()
-    return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Your name has {namelenght} letters!"
+    try:
+        usr = int(usr)
+    except Exception:
+        namelenght = len(usr)
+        capusr = usr.title()
+        return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Your name has {namelenght} letters!"
+    else:
+        alter = 2020 - usr
+        return f"Du wirst/wurdest dieses Jahr {alter} Jahre alt!"
 
 if __name__ == "__main__":
     app.run()

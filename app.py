@@ -9,12 +9,6 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/welcome/<name>")
-def welcome(name):
-    name = name.title()
-    return f"Hello {name}!"
-
-
 @app.route("/name/", methods=["POST", "GET"])
 def age():
     if request.method == "POST":
@@ -23,14 +17,15 @@ def age():
     else:
         return render_template("age.html")
 
-@app.route("/name/<usr>")
+
+@app.route("/name/<usr>/")
 def user(usr):
     try:
         usr = int(usr)
     except Exception:
         namelenght = len(usr)
         capusr = usr.title()
-        return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Your name has {namelenght} letters!"
+        return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Dein Name hat {namelenght} Buchstaben!"
     else:
         alter = 2020 - usr
         return f"Du wirst/wurdest dieses Jahr {alter} Jahre alt!"

@@ -11,7 +11,7 @@ maxdate = f"{year}-{month}-{day}"
 
 @app.route("/")
 def home():
-    return render_template("index.html", maxdate=maxdate)
+    return render_template("indexnew.html", maxdate=maxdate)
 
 
 @app.route("/name/", methods=["POST", "GET"])

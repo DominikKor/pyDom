@@ -10,7 +10,11 @@ day = int(time.strftime("%d"))
 maxdate = f"{year}-{month}-{day}"
 
 @app.route("/")
-def home():
+def redirectindex():
+    return redirect(url_for("index"))
+
+@app.route("/index.html/")
+def index():
     return render_template("indexnew.html", maxdate=maxdate)
 
 
@@ -35,6 +39,34 @@ def user(usr):
         alter = 2020 - usr
         return f"Du wirst/wurdest dieses Jahr {alter} Jahre alt!"""
     return f"{usr}"
+
+@app.route("/404.html/")
+def page404():
+    return render_template("404.html")
+
+@app.route("/about-us.html/")
+def aboutus():
+    return render_template("about-us.html")
+
+@app.route("/blog.html/")
+def blog():
+    return render_template("blog.html")
+
+@app.route("/blog-single.html/")
+def blogsingle():
+    return render_template("blog-single.html")
+
+@app.route("/contact.html/")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/portfolio.html/")
+def portfolio():
+    return render_template("portfolio.html")
+
+@app.route("/services.html/")
+def services():
+    return render_template("services.html")
 
 if __name__ == "__main__":
     app.run()

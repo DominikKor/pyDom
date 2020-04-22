@@ -3,11 +3,10 @@ import time
 
 app = Flask(__name__)
 
-year = int(time.strftime("%Y"))
-month = int(time.strftime("%m"))
-day = int(time.strftime("%d"))
-
-maxdate = f"{year}-{month}-{day}"
+thisday = int(time.strftime("%d"))
+thismonth = int(time.strftime("%m"))
+thisyear = int(time.strftime("%Y"))
+thisdate = f"{thisday}/{thismonth}/{thisyear}"
 
 @app.route("/")
 def redirectindex():
@@ -15,19 +14,19 @@ def redirectindex():
 
 @app.route("/index.html/")
 def index():
-    return render_template("indexnew.html", maxdate=maxdate)
+    return render_template("indexnew.html")
 
 
-@app.route("/name/", methods=["POST", "GET"])
-def age():
+@app.route("/age/", methods=["POST", "GET"])
+def age(thisdate=thisdate):
     if request.method == "POST":
         user = request.form["nm"]
         return redirect(url_for("user", usr=user))
     else:
-        return render_template("age.html")
+        return render_template("age.html",thisdate=thisdate)
 
 
-@app.route("/name/<usr>/")
+@app.route("/age/<usr>/")
 def user(usr):
     """try:
         usr = int(usr)
@@ -38,7 +37,11 @@ def user(usr):
     else:
         alter = 2020 - usr
         return f"Du wirst/wurdest dieses Jahr {alter} Jahre alt!"""
-    return f"{usr}"
+    return redirect(url_for("agecalculation"))
+
+@app.route("/agecalculation/")
+def agecalculation():
+    return render_template("agecalculation.html")
 
 @app.route("/404.html/")
 def page404():

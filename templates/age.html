@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 {% block title %}pydom.de - Alter berechnen{% endblock %}
 {% block body %}
-<h1>Name und Alter</h1><hr>
+<h1>Alter berechnen</h1><hr>
 <form action="#" method="post">
-    <p>Gebe deinen Namen oder dein Geburtsjahr ein.</p>
-    <p><input id="date" type="date" name="nm" value="2000-1-1"
-       min="1900-1-1" max="1900-1-2" required></p>
-    <p><input type="submit" value="Weiter" /></p>
+    <p>Gebe dein Geburtsjahr ein, damit wir dein Alter berechnen können.</p>
+    <p><input type="date" value="2020-04-22" min="1900-01-01" max="2020-04-22"></p>
+    <p><input type="submit" value="Weiter"/></p>
 </form>
 {% endblock %}

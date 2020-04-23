@@ -21,7 +21,7 @@ def index():
 def age(thisdate=thisdate):
     if request.method == "POST":
         user = request.form["nm"]
-        return redirect(url_for("user", usr=user))
+        return redirect(url_for("agecalculation", usr=user))
     else:
         return render_template("age.html",thisdate=thisdate)
 

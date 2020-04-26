@@ -1,12 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request
-import time
 
 app = Flask(__name__)
-
-thisday = int(time.strftime("%d"))
-thismonth = int(time.strftime("%m"))
-thisyear = int(time.strftime("%Y"))
-thisdate = f"{thisday}/{thismonth}/{thisyear}"
 
 @app.route("/")
 def redirectindex():
@@ -18,30 +12,17 @@ def index():
 
 
 @app.route("/age/", methods=["POST", "GET"])
-def age(thisdate=thisdate):
+def age():
+    global birthyear
     if request.method == "POST":
-        user = request.form["nm"]
-        return redirect(url_for("agecalculation", usr=user))
+        birthyear = request.form["birthyear"]
+        return redirect(url_for("agecalculation", birthyear=birthyear))
     else:
-        return render_template("age.html",thisdate=thisdate)
-
-
-@app.route("/age/<usr>/")
-def user(usr):
-    """try:
-        usr = int(usr)
-    except Exception:
-        namelenght = len(usr)
-        capusr = usr.title()
-        return f"<h1>Hello {capusr}!</h1> <br> Fun Fact: Dein Name hat {namelenght} Buchstaben!"
-    else:
-        alter = 2020 - usr
-        return f"Du wirst/wurdest dieses Jahr {alter} Jahre alt!"""
-    return redirect(url_for("agecalculation"))
+        return render_template("age.html")
 
 @app.route("/agecalculation/")
 def agecalculation():
-    return render_template("agecalculation.html")
+    return render_template("agecalculation.html", birthyear=birthyear)
 
 @app.route("/404.html/")
 def page404():

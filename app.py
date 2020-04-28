@@ -12,7 +12,7 @@ def redirectindex():
 
 @app.route("/index.html/")
 def index():
-    return render_template("indexnew.html")
+    return render_template("index.html")
 
 
 @app.route("/age/", methods=["POST", "GET"])

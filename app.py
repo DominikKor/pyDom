@@ -101,7 +101,7 @@ def blog():
 
 @app.route("/blog-single.html/")
 def blogsingle():
-    return render_template("blog-single.html")
+    return render_template("blo-single.html")
 
 @app.route("/contact.html/")
 def contact():
@@ -114,6 +114,10 @@ def portfolio():
 @app.route("/services.html/")
 def services():
     return render_template("services.html")
+
+@app.route("/app-ads.txt/")
+def appads():
+    return render_template("app-ads.html")
 
 @app.errorhandler(404)
 def not_found(e):

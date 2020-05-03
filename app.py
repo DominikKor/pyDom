@@ -101,7 +101,7 @@ def blog():
 
 @app.route("/blog-single.html/")
 def blogsingle():
-    return render_template("blog-single.html")
+    return render_template("bloga-single.html")
 
 @app.route("/contact.html/")
 def contact():

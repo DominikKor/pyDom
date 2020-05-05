@@ -32,6 +32,7 @@
 
 
     {% block aftertitlehead %}{% endblock %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <!--START SCROLL TOP BUTTON -->
@@ -55,19 +56,25 @@
 			      <li class="nav-item active">
 			        <a href="/index.html">Home</a>
 			      </li>
-				  <li class="nav-item"><a href="/age">Age</a></li>
-			      <li class="nav-item"><a href="/about-us.html">About us</a></li>
-			      <li class="nav-item"><a href="/services.html">Services</a></li>
-			      <li class="nav-item"><a href="/portfolio.html">Portfolio</a></li>
+				  <li class="nav-item"><a href="/age">Age <span class="badge badge-light">New</span></a></li>
 			       <li class="nav-item dropdown">
-				        <a class="dropdown-toggle" href="blog.html" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+				        <a class="dropdown-toggle" href="blog.html" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">pyDom</a>
 				       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				          <a class="dropdown-item" href="/blog.html">Blog Archive</a>
-				          <a class="dropdown-item" href="/blog-single.html">Blog Single</a>
+				           <a class="dropdown-item" href="/blog.html">Blog Archive</a>
+				           <a class="dropdown-item" href="/blog-single.html">Blog Single</a>
+						   <a class="dropdown-item" href="/about-us.html">Über uns</a>
+						   <a class="dropdown-item" href="/services.html">Service</a>
+						   <a class="dropdown-item" href="/portfolio.html">Portfolio</a>
+						   <a class="dropdown-item" href="/contact.html">Kontakt</a>
 				        </div>
 				    </li>
-			        <li class="nav-item"><a href="/contact.html">Contact us</a></li>
-			        <li class="nav-item"><a href="/404.html">404 Page</a></li>
+					{% if current_user.is_authenticated %}
+						<li class="nav-item ml-auto"><a href="/account.html">Account</a></li>
+						<li class="nav-item"><a href="/logout.html">Ausloggen</a></li>
+					{% else %}
+			        	<li class="nav-item ml-auto"><a href="/login.html">Einloggen</a></li>
+						<li class="nav-item"><a href="/registrieren.html">Registrieren</a></li>
+					{% endif %}
 			    </ul>
 			  </div>
 			</nav>
@@ -217,5 +224,8 @@
 	    });
 
 	</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

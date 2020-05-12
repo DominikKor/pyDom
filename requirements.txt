@@ -10,3 +10,4 @@ flask_wtf
 wtforms
 flask_bcrypt
 flask_login
+psycopg2

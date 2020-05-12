@@ -6,3 +6,7 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 Werkzeug==1.0.1
 flask_sqlalchemy
+flask_wtf
+wtforms
+flask_bcrypt
+flask_login

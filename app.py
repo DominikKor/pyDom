@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 
@@ -49,7 +49,7 @@ class RegistrationForm(FlaskForm):
     username = StringField("Benutzername",
                            validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField("E-Mail",
-                           validators=[DataRequired(), Email()])
+                           validators=[DataRequired()])
     password = PasswordField("Passwort",
                            validators=[DataRequired()])
     confirm_password = PasswordField("Passwort bestätigen",
@@ -68,7 +68,7 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email = StringField("E-Mail",
-                           validators=[DataRequired(), Email()])
+                           validators=[DataRequired()])
     password = PasswordField("Passwort",
                            validators=[DataRequired()])
     remember = BooleanField("Angemeldet bleiben")

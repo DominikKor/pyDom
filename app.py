@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 
-app = Flask(__name__)flask_login
+app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "87aa28f53d12b98ffe7f439aa7eaf268"
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"

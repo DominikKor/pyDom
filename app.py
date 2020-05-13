@@ -1,12 +1,13 @@
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 from psycopg2 import *
+import time
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -19,6 +20,10 @@ login_manager = LoginManager(app)
 login_manager.login_view = "login"
 login_manager.login_message = "Bitte melde dich an um diese Seite zu öffnen"
 login_manager.login_message_category = "danger"
+
+Jahr = int(time.strftime("%Y"))
+Monat = int(time.strftime("%m"))
+Tag = int(time.strftime("%d"))
 
 @login_manager.user_loader
 def load_user(user_id):

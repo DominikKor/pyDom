@@ -2,7 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request, flash, ses
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 from psycopg2 import *
@@ -14,8 +14,11 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "87aa28f53d12b98ffe7f439aa7eaf268"
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://rckkgblinsrymr:37831f40b6effc3344ffb24b2dda03c8760fb0daeb820ce368361ab8d7290edc@ec2-54-165-36-134.compute-1.amazonaws.com:5432/dcu9gh8escihdu"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
 login_manager.login_message = "Bitte melde dich an um diese Seite zu öffnen"
@@ -55,7 +58,7 @@ class RegistrationForm(FlaskForm):
     username = StringField("Benutzername",
                            validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField("E-Mail",
-                           validators=[DataRequired()])
+                           validators=[DataRequired(), Email()])
     password = PasswordField("Passwort",
                            validators=[DataRequired()])
     confirm_password = PasswordField("Passwort bestätigen",
@@ -74,7 +77,7 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email = StringField("E-Mail",
-                           validators=[DataRequired()])
+                           validators=[DataRequired(), Email()])
     password = PasswordField("Passwort",
                            validators=[DataRequired()])
     remember = BooleanField("Angemeldet bleiben")

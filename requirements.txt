@@ -12,4 +12,3 @@ flask_bcrypt
 flask_login
 psycopg2
 datetime
-time

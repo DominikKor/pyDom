@@ -1,23 +1,9 @@
-from flask import Flask, redirect, url_for, render_template, request, flash, session
-from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from flask_bcrypt import Bcrypt
-from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
-from psycopg2 import *
+from flask import redirect, url_for, render_template, flash, request, session
+from flask_login import login_user, current_user, logout_user, login_required, login_manager, LoginManager
+from appdirectory.models import User, Post
+from appdirectory.forms import RegistrationForm, LoginForm
+from appdirectory import app, db, bcrypt
 import time
-from datetime import datetime
-
-app = Flask(__name__)
-
-app.config["SECRET_KEY"] = "87aa28f53d12b98ffe7f439aa7eaf268"
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://rckkgblinsrymr:37831f40b6effc3344ffb24b2dda03c8760fb0daeb820ce368361ab8d7290edc@ec2-54-165-36-134.compute-1.amazonaws.com:5432/dcu9gh8escihdu"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
 
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
@@ -32,59 +18,8 @@ Tag = int(time.strftime("%d"))
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default="default.jpg")
-    password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship("Post", backref="author", lazy=True)
-
-    def __repr__(self):
-        return f"User('{self.username}', '{self.email}', '{self.image_file}'"
-
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    content = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-
-    def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}'"
-
-
-class RegistrationForm(FlaskForm):
-    username = StringField("Benutzername",
-                           validators=[DataRequired(), Length(min=2, max=20)])
-    email = StringField("E-Mail",
-                           validators=[DataRequired(), Email()])
-    password = PasswordField("Passwort",
-                           validators=[DataRequired()])
-    confirm_password = PasswordField("Passwort bestätigen",
-                           validators=[DataRequired(), EqualTo("password")])
-    submit = SubmitField("Registrieren")
-
-    def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
-        if user:
-            raise ValidationError("Dieser Benutzername ist schon vergeben. Bitte wähle einen anderen.")
-
-    def validate_email(self, email):
-        email = User.query.filter_by(email=email.data).first()
-        if email:
-            raise ValidationError("Diese E-Mail ist schon registriert. Bitte wähle einen andere oder melde dich an.")
-
-class LoginForm(FlaskForm):
-    email = StringField("E-Mail",
-                           validators=[DataRequired(), Email()])
-    password = PasswordField("Passwort",
-                           validators=[DataRequired()])
-    remember = BooleanField("Angemeldet bleiben")
-    submit = SubmitField("Einloggen")
-
 @app.route("/")
-def redirectindex():
+def home():
     return redirect(url_for("index"))
 
 @app.route("/index.html/")
@@ -240,6 +175,3 @@ def appads():
 @app.errorhandler(404)
 def not_found(e):
     return render_template("404.html")
-
-if __name__ == "__main__":
-    app.run(debug=False)

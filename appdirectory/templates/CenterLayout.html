@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block layoutbody %}
+<div id="mu-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-header-area">
+                    <h1 class="mu-page-header-title">Seite</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mu-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav aria-label="breadcrumb" role="navigation">
+                    <ol class="breadcrumb mu-breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Seite</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="mu-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-blog-area">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block beforefooter %}{% endblock %}

@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "CenterLayout.html" %}
 {% block body %}
     <div>
-        <form method="POST" action="">
+        <form method="POST" action="" class="ml-n3">
             {{ form.hidden_tag() }}
                 <legend class="ml-3 mb-2">Einloggen</legend>
                 {% with messages = get_flashed_messages(with_categories=true) %}

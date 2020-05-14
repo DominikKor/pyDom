@@ -14,9 +14,11 @@ Jahr = int(time.strftime("%Y"))
 Monat = int(time.strftime("%m"))
 Tag = int(time.strftime("%d"))
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 @app.route("/")
 def home():
@@ -25,6 +27,10 @@ def home():
 @app.route("/index.html/")
 def index():
     return render_template("index.html")
+
+@app.route("/testsite.test/")
+def testsite():
+    return render_template("testsite.html")
 
 
 @app.route("/age/", methods=["POST", "GET"])
@@ -96,13 +102,12 @@ def agecalculation():
                     GanzeAntwort = f"{GanzeAntwortEins}{GanzeAntwortZwei}"
                 else:
                     GanzeAntwort = f"{Antwort} in diesem Jahr {str(Alter)}."
-    return GanzeAntwort
-    #  return render_template("agecalculation.html", birthyear=birthyear)
+    return render_template("agecalculation.html", GanzeAntwort=GanzeAntwort)
 
 @app.route("/registrieren.html/", methods=["GET", "POST"])
 def register():
     if current_user.is_authenticated:
-        return redirect("/index.html/")
+        return redirect(url_for(index))
     form = RegistrationForm(meta={'csrf': False})
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
@@ -111,20 +116,20 @@ def register():
         db.session.commit()
         session["user"] = form.username.data
         flash(f"Account erstellt für {form.username.data}! Du kannst dich nun Einloggen!", "success")
-        return redirect("/login.html/")
+        return redirect(url_for(login))
     return render_template("registrieren.html", form=form)
 
 @app.route("/login.html/", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-        return redirect("/index.html/")
+        return redirect(url_for(index))
     form = LoginForm(meta={'csrf': False})
     if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
             if user and bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
                 next_page = request.args.get("next")
-                return redirect(next_page) if next_page else redirect("/account.html/")
+                return redirect(next_page) if next_page else redirect(url_for(account))
             else:
                 flash("Login nicht erfolgreich. Bitte überprüfe die E-Mail und das Passwort.", "danger")
     return render_template("login.html", form=form)
@@ -133,7 +138,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect("/index.html/")
+    return redirect(url_for(index))
 
 @app.route("/account.html/")
 @login_required
@@ -154,7 +159,7 @@ def blog():
 
 @app.route("/blog-single.html/")
 def blogsingle():
-    return render_template("bloga-single.html")
+    return render_template("blog-single.html")
 
 @app.route("/contact.html/")
 def contact():

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "CenterLayout.html" %}
 {% block body %}
 <h1 class="ml-2">Account {{ current_user.username }}</h1>
 {% with messages = get_flashed_messages(with_categories=true) %}

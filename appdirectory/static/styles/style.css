@@ -1660,7 +1660,7 @@ a:focus,
 }
 
 #mu-breadcrumb {
-	background-color: #f6f6f6;
+	background-color: transparent; /*#f6f6f6*/
 	display: inline;
 	float: left;
 	width: 100%;

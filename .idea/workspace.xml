@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7c021a2-7ce8-4561-b550-471ddd6122b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/appdirectory/templates/CenterLayout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appdirectory/templates/FullLayout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appdirectory/templates/testsite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/static/assets/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/static/assets/images/page-header-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/static/assets/images/page-header-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/about-us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/age.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/age.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/agecalculation.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/agecalculation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/portfolio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/registrieren.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/registrieren.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appdirectory/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/appdirectory/templates/services.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -26,6 +47,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/appdirectory/models.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/appdirectory/__init__.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/appdirectory/templates/blog-single.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/run.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/appdirectory/forms.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/appdirectory/routes.py" root0="SKIP_INSPECTION" />
@@ -128,10 +150,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="app-ads.txt added" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="72" key="#Inspections" timestamp="1589382446219">
+    <state x="361" y="72" key="#Inspections" timestamp="1589485434083">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="72" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1589382446219" />
+    <state x="361" y="72" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1589485434083" />
     <state x="537" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588691396249">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -156,38 +178,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587039341348" />
-    <state width="1515" height="270" key="GridCell.Tab.0.bottom" timestamp="1589384835876">
+    <state width="1515" height="270" key="GridCell.Tab.0.bottom" timestamp="1589492527161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589384835876" />
-    <state width="1515" height="270" key="GridCell.Tab.0.center" timestamp="1589384835876">
+    <state width="1515" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589492527161" />
+    <state width="1515" height="270" key="GridCell.Tab.0.center" timestamp="1589492527161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="270" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589384835876" />
-    <state width="1515" height="270" key="GridCell.Tab.0.left" timestamp="1589384835876">
+    <state width="1515" height="270" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589492527161" />
+    <state width="1515" height="270" key="GridCell.Tab.0.left" timestamp="1589492527161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="270" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589384835876" />
-    <state width="1515" height="270" key="GridCell.Tab.0.right" timestamp="1589384835876">
+    <state width="1515" height="270" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589492527161" />
+    <state width="1515" height="270" key="GridCell.Tab.0.right" timestamp="1589492527161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="270" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589384835876" />
-    <state width="1515" height="259" key="GridCell.Tab.1.bottom" timestamp="1589383596024">
+    <state width="1515" height="270" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589492527161" />
+    <state width="1515" height="259" key="GridCell.Tab.1.bottom" timestamp="1589487346715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="259" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589383596024" />
-    <state width="1515" height="259" key="GridCell.Tab.1.center" timestamp="1589383596024">
+    <state width="1515" height="259" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589487346715" />
+    <state width="1515" height="259" key="GridCell.Tab.1.center" timestamp="1589487346715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="259" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589383596024" />
-    <state width="1515" height="259" key="GridCell.Tab.1.left" timestamp="1589383596024">
+    <state width="1515" height="259" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589487346715" />
+    <state width="1515" height="259" key="GridCell.Tab.1.left" timestamp="1589487346715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="259" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589383596024" />
-    <state width="1515" height="259" key="GridCell.Tab.1.right" timestamp="1589383596024">
+    <state width="1515" height="259" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589487346715" />
+    <state width="1515" height="259" key="GridCell.Tab.1.right" timestamp="1589487346715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="259" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589383596024" />
+    <state width="1515" height="259" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589487346715" />
     <state x="277" y="56" key="SettingsEditor" timestamp="1588690985352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -204,9 +226,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588273286129" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589381321990">
+    <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1589461212232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589381321990" />
+    <state x="463" y="144" width="609" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1589461212232" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589489444887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589489444887" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 {% extends "CenterLayout.html" %}
+{% block title %} {{ title }} {% endblock %}
 {% block body %}
     <div>
         <form method="POST" action="" class="ml-n3">
@@ -46,7 +47,7 @@
     </div>
     <div>
         <small class="ml-1 muted">
-            Noch kein Account? <a href="/registrieren.html/"><b>Jetzt registrieren!</b></a>
+            Noch kein Account? <a href="{{ url_for('register') }}"><b>Jetzt registrieren!</b></a>
         </small><br>
         <small class="ml-1 muted">
             <a href="#"><b>Passwort vergessen?</b></a>

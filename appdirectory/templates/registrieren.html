@@ -1,7 +1,8 @@
 {% extends "CenterLayout.html" %}
+{% block title %} {{ title }} {% endblock %}
 {% block body %}
     <div>
-        <form method="POST" action="/registrieren.html/">
+        <form method="POST" action="{{ url_for('register') }}" class="ml-n3">
             {{ form.hidden_tag() }}
                 <legend class="ml-3 mb-2">Registrieren</legend>
                 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -87,7 +88,7 @@
     </div>
     <div>
         <small class="ml-1">
-            Schon registriert? <a href="/login.html/"><b>Einloggen</b></a>
+            Schon registriert? <a href="{{ url_for('login') }}"><b>Einloggen</b></a>
         </small>
     </div>
 {% endblock %}

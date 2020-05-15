@@ -1,5 +1,5 @@
 {% extends "FullLayout.html" %}
-{% block title %} pydom.de - Home {% endblock %}
+{% block title %} {{ title }} {% endblock %}
 {% block aftertitlehead %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -637,7 +637,7 @@
 														</ul>
 														<h2 class="mu-blog-item-title"><a href="#">Seeing the big picture of information and information management</a></h2>
 														<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-														<a class="mu-blg-readmore-btn" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+														<a class="mu-blg-readmore-btn" href="{{ url_for('blog_single') }}">Read more <i class="fa fa-long-arrow-right"></i></a>
 													</div>
 												</article>
 											</div>
@@ -652,7 +652,7 @@
 														</ul>
 														<h2 class="mu-blog-item-title"><a href="#">Vestibulum lacinia elit sed elit ultrices consequat.</a></h2>
 														<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-														<a class="mu-blg-readmore-btn" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+														<a class="mu-blg-readmore-btn" href="{{ url_for('blog_single') }}">Read more <i class="fa fa-long-arrow-right"></i></a>
 													</div>
 												</article>
 											</div>
@@ -667,7 +667,7 @@
 														</ul>
 														<h2 class="mu-blog-item-title"><a href="#">Aliquam consectetur sem sed ante semper, ut convallis risus ullamcorper.</a></h2>
 														<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-														<a class="mu-blg-readmore-btn" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+														<a class="mu-blg-readmore-btn" href="{{ url_for('blog_single') }}">Read more <i class="fa fa-long-arrow-right"></i></a>
 													</div>
 												</article>
 											</div>

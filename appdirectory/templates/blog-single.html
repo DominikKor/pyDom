@@ -1,5 +1,5 @@
 {% extends "CenterLayout.html" %}
-{% block title %} pydom.de - blog single {% endblock %}
+{% block title %} {{ title }} {% endblock %}
 {% block body %}
 <div class="row">
     <div class="col-md-8">
@@ -133,7 +133,7 @@
                                         information management</a></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
                                         eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-                                    <a class="mu-blg-readmore-btn" href="blog-single.html">Read more <i
+                                    <a class="mu-blg-readmore-btn" href="{{ url_for('blog_single') }}">Read more <i
                                             class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </article>
@@ -151,7 +151,7 @@
                                         information management</a></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
                                         eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-                                    <a class="mu-blg-readmore-btn" href="blog-single.html">Read more <i
+                                    <a class="mu-blg-readmore-btn" href="{{ url_for('blog_single') }}">Read more <i
                                             class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </article>
@@ -169,7 +169,7 @@
                                         information management</a></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
                                         eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-                                    <a class="mu-blg-readmore-btn" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+                                    <a class="mu-blg-readmore-btn" href="{{ url_for('blog_single') }}">Read more <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </article>
                         </div>

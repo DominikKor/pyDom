@@ -21,7 +21,7 @@ class RegistrationForm(FlaskForm):
             raise ValidationError("Dieser Benutzername ist schon vergeben. Bitte wähle einen anderen.")
 
     def validate_email(self, email):
-        user = User.query.filter_by(username=email.data).first()
+        email = User.query.filter_by(username=email.data).first()
         if email:
             raise ValidationError("Diese E-Mail ist schon registriert. Bitte wähle einen andere oder melde dich an.")
 

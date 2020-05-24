@@ -34,6 +34,10 @@ def testsite():
     sitename = "Testseite"
     return render_template("testsite.html", title=sitename, sitename=sitename)
 
+@app.route("/test2/")
+def secondtestsite():
+    sitename = "Zweite Testseite"
+    return render_template("secondtestsite.html", title=sitename, sitename=sitename)
 
 @app.route("/alter.html/", methods=["POST", "GET"])
 def age():
@@ -113,7 +117,9 @@ def register():
     sitename = "Registrieren"
     if current_user.is_authenticated:
         return redirect(url_for("index"))
-    form = RegistrationForm(meta={'csrf': False})
+    form = RegistrationForm()
+#   if csrf-token error:
+#   form = RegistrationForm(meta={'csrf': True})
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
@@ -129,7 +135,9 @@ def login():
     sitename = "Einloggen"
     if current_user.is_authenticated:
         return redirect(url_for("index"))
-    form = LoginForm(meta={'csrf': False})
+    form = LoginForm()
+#   If csrf-token error:
+#   form = LoginForm(meta={'csrf': True})
     if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
             if user and bcrypt.check_password_hash(user.password, form.password.data):
@@ -181,6 +189,7 @@ def portfolio():
 def services():
     sitename = "Service"
     return render_template("services.html", title=sitename, sitename=sitename)
+
 
 @app.route("/app-ads.txt/")
 def appads():

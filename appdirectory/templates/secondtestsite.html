@@ -1,0 +1,92 @@
+{% extends "FullLayout.html" %}
+{% block beforetitlehead %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animiertes Scrolling (SmoothScrolling) mit jQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+	body {
+		margin: 0;
+		font-family: system-ui, sans-serif;
+	}
+
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: silver;
+		display: flex;
+	}
+
+	nav a {
+		color: white;
+		flex: 1;
+		text-align: center;
+		padding: 1em;
+		background: #333;
+		text-decoration: none;
+	}
+
+	nav a:hover,
+	nav a:active,
+	nav a:focus {
+		color: white;
+		background: #555;
+	}
+
+	div {
+		background: #999;
+		height: 100vh;
+		font-size: 10em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	div:nth-of-type(odd) {
+		background: #888;
+	}
+
+    </style>
+{% endblock %}
+{% block body %}
+<nav>
+    <a href="#section-one">1</a>
+    <a href="#section-two">2</a>
+    <a href="#section-three">3</a>
+    <a href="#section-four">4</a>
+    <a href="#section-five">5</a>
+</nav>
+
+<div id="section-one">1</div>
+<div id="section-two">2</div>
+<div id="section-three">3</div>
+<div id="section-four">4</div>
+<div id="section-five">5</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+// Smooth scrolling when clicking an anchor link
+$(document).ready(function(){
+
+	// Klick auf eien Link, der eine Raute (# = Anker) enthält
+	$('a[href^="#"]').on('click',function(e) {
+		e.preventDefault();
+
+		var target = this.hash;
+		var $target = $(target);
+
+		$('html, body').stop().animate({
+			'scrollTop': $target.offset().top
+		}, 500, 'swing', function () {
+			window.location.hash = target;
+		});
+	});
+});
+
+</script>
+{% endblock %}

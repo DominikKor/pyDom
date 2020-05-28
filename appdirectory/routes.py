@@ -200,10 +200,6 @@ def error_404_page():
     sitename = "404"
     return render_template("404.html", title=sitename, sitename=sitename)
 
-@app.route("/bfb/")
-def bfb():
-    return "git test success"
-
 @app.errorhandler(404)
 def not_found(e):
     return redirect(url_for("error_404_page"))

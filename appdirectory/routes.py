@@ -29,16 +29,6 @@ def index():
     sitename = "Home"
     return render_template("index.html", title=sitename, sitename=sitename)
 
-@app.route("/test/")
-def testsite():
-    sitename = "Testseite"
-    return render_template("testsite.html", title=sitename, sitename=sitename)
-
-@app.route("/test2/")
-def secondtestsite():
-    sitename = "Zweite Testseite"
-    return render_template("secondtestsite.html", title=sitename, sitename=sitename)
-
 @app.route("/alter.html/", methods=["POST", "GET"])
 def age():
     sitename = "Alter berechnen"

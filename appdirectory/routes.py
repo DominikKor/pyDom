@@ -29,6 +29,15 @@ def index():
     sitename = "Home"
     return render_template("index.html", title=sitename, sitename=sitename)
 
+@app.route("/test/")
+def testsite():
+    sitename = "Testseite"
+    return render_template("testsite.html", title=sitename, sitename=sitename)
+
+@app.route("/test2/")
+def secondtestsite():
+    sitename = "Zweite Testseite"
+    return render_template("secondtestsite.html", title=sitename, sitename=sitename)
 
 @app.route("/alter.html/", methods=["POST", "GET"])
 def age():
@@ -190,6 +199,10 @@ def appads():
 def error_404_page():
     sitename = "404"
     return render_template("404.html", title=sitename, sitename=sitename)
+
+@app.route("/bfb/")
+def bfb():
+    return "git test success"
 
 @app.errorhandler(404)
 def not_found(e):
